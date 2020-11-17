@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install tree
-        run: sudo apt-get install tree
+      - name: Install Node
+        run: sudo apt-get install nodejs
+      - name: Install AppCenter CLI
+        run: npm install -g appcenter-cli
       - name: Checkout
         uses: actions/checkout@v2
       - name: set up JDK 1.8
