@@ -20,7 +20,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
       - name: List
-        run: tree app/build/ouputs/
+        run: tree ./app/build/ouputs/
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
