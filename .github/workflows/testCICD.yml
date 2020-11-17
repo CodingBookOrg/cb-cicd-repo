@@ -28,7 +28,5 @@ jobs:
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
-      - name: Current Directory
-        run: jarsigner -verify -verbose -certs app/build/outputs/apk/debug/app-debug.apk
       - name: Distribute
         run: appcenter distribute release --group CVS --file app/build/outputs/apk/debug/app-debug.apk --app CodingBook/CVS-Android --token ${{ secrets.APPCENTER }}  --quiet
