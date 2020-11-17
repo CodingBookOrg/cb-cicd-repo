@@ -19,13 +19,11 @@ jobs:
           java-version: 1.8
       - name: Build with Gradle
         run: ./gradlew build
-      - name: PWD
-        run: pwd  
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
           name: app
-          path: app/build/ouputs/apk/debug/app-debug.apk 
+          path: ./app/build/ouputs/apk/debug/app-debug.apk 
   distribute:
     needs: [build]
     runs-on: ubuntu-latest
