@@ -42,5 +42,5 @@ jobs:
           appName: CodingBook/CVS-Android
           token: ${{ secrets.GITHUB_TOKEN }}
           group: CVS Developers
-          file: ${{steps.download.outputs.download-path}}.app-debug.apk
+          file: ${{steps.download.outputs.download-path}}/app-debug.apk
           notifyTesters: true
