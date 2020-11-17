@@ -18,6 +18,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Keytool
-        run: keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias -keypass password -storepass password -dname "CN=mqttserver.ibm.com, OU=ID, O=IBM, L=Hursley, S=Hants, C=GB"  -noprompt
+        run: keytool -genkey -v -keystore app/my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias -keypass password -storepass password -dname "CN=mqttserver.ibm.com, OU=ID, O=IBM, L=Hursley, S=Hants, C=GB"  -noprompt
       - name: List
         run: ls
