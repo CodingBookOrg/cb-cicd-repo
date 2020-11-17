@@ -23,7 +23,7 @@ jobs:
           name: app
           path: app/build/ouputs/apk/debug/app-debug.apk
       - name: List
-        run: ls ./
+        run: tree ./app 
   distribute:
     needs: [build]
     runs-on: ubuntu-latest
