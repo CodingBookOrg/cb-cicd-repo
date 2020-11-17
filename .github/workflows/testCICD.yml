@@ -36,8 +36,6 @@ jobs:
         with:
           name: app
           path: ./
-      - name: List
-        run: appcenter apps list
       - name: Disribute to AppCenter
         uses: wzieba/AppCenter-GitHub-Action@v1.2.1
         with:
