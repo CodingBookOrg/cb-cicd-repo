@@ -9,10 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node
-        run: sudo apt-get install nodejs
-      - name: Install AppCenter CLI
-        run: sudo npm install -g appcenter-cli
       - name: Checkout
         uses: actions/checkout@v2
       - name: set up JDK 1.8
@@ -26,5 +22,21 @@ jobs:
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node
+        run: sudo apt-get install nodejs
+      - name: Install AppCenter CLI
+        run: sudo npm install -g appcenter-cli
+      - name: Download APK
+      - uses: actions/download-artifact@v2.0.5
+      - id: download
+      - with:
+          name: app
+          path: ./
+      - name: List
+        run: pwd & ls
       - name: Distribute
         run: appcenter distribute release --group CVS --file app/build/outputs/apk/debug/app-debug.apk --app CodingBook/CVS-Android --token ${{ secrets.APPCENTER }}  --quiet
