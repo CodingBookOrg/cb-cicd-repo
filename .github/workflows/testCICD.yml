@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install tree
-        run: yum install tree
+        run: sudo apt-get install tree
       - name: Checkout
         uses: actions/checkout@v2
       - name: set up JDK 1.8
