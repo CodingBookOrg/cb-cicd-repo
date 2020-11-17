@@ -22,6 +22,8 @@ jobs:
         with:
           name: app
           path: app/build/ouputs/apk/debug/app-debug.apk
+      - name: List
+        run: ls app/build/ouputs/apk
   distribute:
     needs: [build]
     runs-on: ubuntu-latest
