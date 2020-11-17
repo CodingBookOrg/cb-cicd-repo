@@ -17,21 +17,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Build with Gradle
-        run: ./gradlew build
-      - name: List
-        run: tree /app/build/outputs/
-      - name: Upload APK
-        uses: actions/upload-artifact@v2
-        with:
-          name: app
-          path: app/build/outputs/apk/debug/app-debug.apk 
-      - name: Disribute to AppCenter
-        uses: wzieba/AppCenter-GitHub-Action@v1.2.1
-        with:
-          appName: CodingBook/CVS-Android
-          token: ${{ secrets.GITHUB_TOKEN }}
-          group: CVS Developers
-          file:  /github/workspace/app-debug.apk
-          notifyTesters: true
-      
+      - name: Keytool
+        run: keytool
