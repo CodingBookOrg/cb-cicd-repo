@@ -23,9 +23,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app
-          path: app/build/ouputs/apk/debug/app-debug.apk
-      - name: List
-        run: tree ./ 
+          path: app/build/generated/ouputs/apk/debug/app-debug.apk 
   distribute:
     needs: [build]
     runs-on: ubuntu-latest
