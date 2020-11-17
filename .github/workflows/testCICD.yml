@@ -31,9 +31,9 @@ jobs:
       - name: Install AppCenter CLI
         run: sudo npm install -g appcenter-cli
       - name: Download APK
-      - uses: actions/download-artifact@v2.0.5
-      - id: download
-      - with:
+        uses: actions/download-artifact@v2.0.5
+        id: download
+        with:
           name: app
           path: ./
       - name: List
